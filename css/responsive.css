@@ -1,0 +1,31 @@
+@media (max-width: 900px) {
+  .hero-visual {
+    min-height: 300px;
+  }
+
+  .mock-card.wide {
+    width: 280px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero h1 {
+    white-space: normal;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero-visual {
+    min-height: 260px;
+  }
+
+  .search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-visual {
+    min-height: 200px;
+  }
+}

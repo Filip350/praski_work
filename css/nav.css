@@ -1,0 +1,256 @@
+.site-header {
+  display: flex;
+  justify-content: center;
+  padding: 28px 20px 0;
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  transform: translateY(6px);
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: rgba(231, 230, 228, 0.75);
+  border-radius: 999px;
+  padding: 12px 26px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 14px;
+
+}
+
+.brand:hover {
+  cursor: pointer;
+}
+
+.brand-serif {
+  font-family: "Roboto Serif", "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.brand-sans {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nav-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  padding: 6px;
+
+  margin-left: auto;
+}
+
+.nav-toggle:hover {
+  cursor: pointer;
+}
+
+.nav-toggle-icon {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #1a1a1a;
+  border-radius: 999px;
+  position: absolute;
+  left: 0;
+  transform-origin: center;
+  transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease;
+}
+
+.nav-toggle-bar:nth-child(1) {
+  top: 0;
+}
+
+.nav-toggle-bar:nth-child(2) {
+  top: 8px;
+}
+
+.nav-toggle-bar:nth-child(3) {
+  top: 16px;
+}
+
+.nav-toggle.is-open .nav-toggle-icon .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open .nav-toggle-icon .nav-toggle-bar:nth-child(1) {
+  top: 8px;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle-icon .nav-toggle-bar:nth-child(3) {
+  top: 8px;
+  transform: rotate(-45deg);
+}
+
+.nav-pill.is-open {
+  border-radius: 18px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.nav-links a {
+  transition: color 0.2s ease;
+ 
+}
+
+.nav-links  {
+  cursor: pointer;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .nav-pill {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    max-width: 520px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-height: 52px;
+    transition: border-radius 0.3s ease, max-height 0.35s ease 0.12s;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    align-items: flex-start;
+    text-align: left;
+    flex-basis: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease,
+      padding 0.25s ease;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+    max-height: 240px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    padding-top: 12px;
+    animation: navDrop 0.25s ease both;
+  }
+
+  .nav-links.is-closing {
+    display: flex;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    padding-top: 0;
+  }
+
+  .nav-pill.is-open {
+    max-height: 320px;
+  }
+
+  .nav-pill.is-closing {
+    transition: max-height 0.35s ease, border-radius 0.3s ease 0.2s;
+  }
+
+  .nav-links a {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  .nav-links.is-open a {
+    animation: navLinkFade 0.3s ease forwards;
+  }
+
+  .nav-links.is-open a:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+
+  .nav-links.is-open a:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .nav-links.is-open a:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+
+  .nav-links.is-open a:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes navDrop {
+    from {
+      transform: translateY(-8px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

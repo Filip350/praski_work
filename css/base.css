@@ -1,0 +1,42 @@
+:root {
+  color-scheme: only light;
+  --bg: #f7f6f4;
+  --text: #141414;
+  --muted: #66635f;
+  --pill: #e7e6e4;
+  --card: #ecebea;
+  --accent: #b62526;
+  --accent-dark: #991f20;
+  --border: #d9d7d3;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 55%);
+  min-height: 100vh;
+  line-height: 1.6;
+  letter-spacing: -0.03em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
