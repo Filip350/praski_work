@@ -10,7 +10,6 @@
 }
 
 .tech h2 {
-  font-size: clamp(26px, 3.2vw, 38px);
   margin-bottom: 14px;
   text-align: center;
 }
@@ -40,7 +39,6 @@
 
 .search {
   padding: 80px 20px 120px;
-  background: #f2f1ef;
 }
 
 .anchor {
@@ -62,7 +60,6 @@
 }
 
 .search-copy h2 {
-  font-size: clamp(24px, 3vw, 34px);
   margin-bottom: 16px;
 }
 
@@ -71,4 +68,55 @@
   margin-bottom: 16px;
   font-size: 15px;
   font-family: "Roboto Serif", "Times New Roman", serif;
+}
+
+.contact {
+  padding: 80px 20px 120px;
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+}
+
+.contact h2 {
+  margin-bottom: 12px;
+}
+
+.section-inner h1,
+.section-inner h2,
+.search-copy h2,
+.contact h2 {
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.contact p {
+  max-width: 520px;
+  color: #3c3a37;
+  font-size: 15px;
+  font-family: "Roboto Serif", "Times New Roman", serif;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #141414;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ghost-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
