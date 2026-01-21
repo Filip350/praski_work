@@ -1,4 +1,12 @@
 @media (max-width: 900px) {
+  .hero-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-thumb {
+    height: 160px;
+  }
+
   .hero-visual {
     min-height: 300px;
   }
@@ -6,9 +14,29 @@
   .mock-card.wide {
     width: 280px;
   }
+
+  .tech-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
+  .search-copy h2 {
+    text-align: center;
+  }
+
+  .eyebrow-extra {
+    display: none;
+  }
+
+  .hero-projects {
+    grid-template-columns: 1fr;
+  }
+
   .hero h1 {
     white-space: normal;
   }
@@ -29,13 +57,17 @@
     min-height: 200px;
   }
 
+  .tech-cards {
+    grid-template-columns: 1fr;
+  }
+
   .contact-inner {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .contact-actions {
+  .contact-grid {
+    grid-template-columns: 1fr;
     justify-content: center;
-    flex-wrap: wrap;
   }
 }

@@ -37,8 +37,34 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 
+.tech-cards {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tech-cards article {
+  background: #f7f6f4;
+  color: #201f1e;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.tech-cards h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tech-cards p {
+  color: #5a5854;
+  font-size: 14px;
+  font-family: "Roboto Serif", "Times New Roman", serif;
+}
+
 .search {
-  padding: 80px 20px 120px;
+  padding: 70px 20px 30px;
 }
 
 .anchor {
@@ -71,18 +97,18 @@
 }
 
 .contact {
-  padding: 80px 20px 120px;
+  padding: 80px 20px 70px;
+  background: linear-gradient(180deg, #f7f6f4 0%, #efedeb 100%);
 }
 
 .contact-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 32px;
-  align-items: center;
+  gap: 36px;
 }
 
 .contact h2 {
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .section-inner h1,
@@ -93,30 +119,56 @@
 }
 
 .contact p {
-  max-width: 520px;
+  max-width: 640px;
+  margin: 0 auto;
   color: #3c3a37;
   font-size: 15px;
+  text-align: center;
   font-family: "Roboto Serif", "Times New Roman", serif;
 }
 
-.contact-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.ghost-btn {
+.contact-card {
+  display: grid;
+  gap: 10px;
+  padding: 22px;
+  border-radius: 20px;
+  background: #f7f6f4;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  color: #141414;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+  background: rgba(182, 37, 38, 0.14);
+  color: #b62526;
+  font-weight: 700;
+  font-size: 16px;
 }
 
-.ghost-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.contact-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.contact-value {
+  color: #5a5854;
+  font-size: 14px;
+  font-family: "Roboto Serif", "Times New Roman", serif;
 }
