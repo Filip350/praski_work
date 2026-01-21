@@ -17,8 +17,9 @@
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(280px, 360px));
   gap: 24px;
+  justify-content: center;
 }
 
 .project-card {
@@ -28,6 +29,7 @@
   border-radius: 22px;
   background: #f0efed;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .project-thumb {
@@ -86,11 +88,19 @@
   width: 18px;
   height: 18px;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-links svg {
   width: 100%;
   height: 100%;
+}
+
+.project-links .icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .project-links .link-demo {
@@ -138,6 +148,9 @@
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 }
 
+.btn-normal-spacing {
+  letter-spacing: 0;
+}
 .hero-visual {
   position: relative;
   min-height: 420px;

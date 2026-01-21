@@ -74,8 +74,9 @@
 .search-grid {
   display: grid;
   grid-template-columns: minmax(200px, 320px) minmax(0, 1fr);
-  gap: 36px;
-  align-items: start;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-visual {
@@ -83,10 +84,23 @@
   border-radius: 18px;
   min-height: 260px;
   box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.search-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .search-copy h2 {
   margin-bottom: 16px;
+}
+
+.search-copy {
+  width: 70%;
+  justify-self: center;
 }
 
 .search-copy p {
@@ -98,7 +112,6 @@
 
 .contact {
   padding: 80px 20px 70px;
-  background: linear-gradient(180deg, #f7f6f4 0%, #efedeb 100%);
 }
 
 .contact-inner {

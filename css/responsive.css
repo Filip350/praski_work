@@ -53,6 +53,11 @@
     grid-template-columns: 1fr;
   }
 
+  .search-copy {
+    width: 100%;
+    justify-self: stretch;
+  }
+
   .search-visual {
     min-height: 200px;
   }
