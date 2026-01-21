@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Case study — Aplikacja treningowa</title>
-    <meta name="description" content="Case study: Aplikacja treningowa" />
+    <meta
+      name="description"
+      content="Case study: budowa aplikacji treningowej — od pomysłu na siłowni do działającego MVP"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +24,7 @@
     />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
   </head>
   <body>
     <header class="site-header">
@@ -52,12 +55,342 @@
       </nav>
     </header>
 
-    <main>
-      <section class="contact">
-        <div class="section-inner">
-          <h1>Case study — Aplikacja treningowa</h1>
+    <main class="case-study">
+      <article class="case-article">
+        <h1>Case study: budowa aplikacji treningowej – od pomysłu na siłowni do działającego MVP</h1>
+
+        <h2>1️⃣ Skąd wziął się pomysł?</h2>
+        <p>Pomysł na aplikację nie powstał przy biurku, tylko… <strong>na siłowni</strong>.</p>
+        <p>Razem ze znajomym zapisywaliśmy trening w jednej z popularnych aplikacji.</p>
+        <p>Szybko wyszło, że:</p>
+        <ul>
+          <li>część sensownych funkcji jest za paywallem,</li>
+          <li>subskrypcja średnio nam się uśmiechała,</li>
+          <li>a sama aplikacja nie do końca robiła wszystko tak, jak byśmy chcieli.</li>
+        </ul>
+        <p>Rzuciłem wtedy pół-żartem:</p>
+        <blockquote>
+          <p>„Przecież taką apkę to dziś można by zrobić na prompta”.</p>
+        </blockquote>
+        <p>Chwila śmiechu, temat zamknięty.</p>
+        <p>…do wieczora.</p>
+
+        <hr class="case-divider" />
+
+        <h2>2️⃣ Pierwsze podejście: AI + bolt.new</h2>
+        <p>Tego samego dnia wrzuciłem prompta do <strong>bolt.new</strong>.</p>
+        <p>Ku mojemu zaskoczeniu:</p>
+        <ul>
+          <li>aplikacja faktycznie się wygenerowała,</li>
+          <li>UI było „mniej więcej” takie, jak opisałem,</li>
+          <li>koncept dało się kliknąć.</li>
+        </ul>
+        <p>Ale bardzo szybko wyszły problemy:</p>
+        <ul>
+          <li>długie generowanie</li>
+          <li>trudne wprowadzanie zmian</li>
+          <li>mały limit tokenów (więcej = płatność)</li>
+          <li>projekt postawiony na <strong>Expo</strong>, co ograniczało customizację</li>
+          <li>brak realnej kontroli nad architekturą</li>
+        </ul>
+        <p>Wniosek był prosty:</p>
+        <p>👉 <em>„Da się, ale można to zrobić lepiej.”</em></p>
+
+        <hr class="case-divider" />
+
+        <h2>3️⃣ Decyzja: robimy to „normalnie”</h2>
+        <p>Miałem już:</p>
+        <ul>
+          <li>doświadczenie w <strong>React Native</strong></li>
+          <li>ogarnięte środowisko</li>
+          <li>aktywną subskrypcję ChatGPT</li>
+        </ul>
+        <p>Uznałem więc, że:</p>
+        <ul>
+          <li>spróbuję <strong>Codexa w VS Code</strong></li>
+          <li>postawię projekt na <strong>czystym React Native CLI</strong></li>
+          <li>potraktuję to jako <strong>realny projekt + portfolio</strong></li>
+        </ul>
+        <p>To był moment, w którym projekt przestał być żartem.</p>
+
+        <hr class="case-divider" />
+
+        <h2>4️⃣ Design – pierwszy „poważny” etap</h2>
+        <p>Zacząłem od designu, ale nie „na oko”.</p>
+        <h3>Jak do tego podszedłem:</h3>
+        <ul>
+          <li>screeny z tego, co wygenerował bolt</li>
+          <li>inspiracje z App Store</li>
+          <li>ręczne przygotowanie ekranów w chacie</li>
+        </ul>
+        <p>Na start założyłem tylko <strong>najważniejsze ekrany</strong>.</p>
+        <p>
+          Jak się później okazało – było ich za mało i kolejne dorabiałem już w trakcie
+          developmentu.
+        </p>
+        <img src="images/Zrzut_ekranu_2026-01-21_o_22.12.17.png" alt="Zrzut ekranu 2026-01-21 o 22.12.17.png" />
+        <img src="images/Zrzut_ekranu_2026-01-21_o_22.13.00.png" alt="Zrzut ekranu 2026-01-21 o 22.13.00.png" />
+        <img src="images/Zrzut_ekranu_2026-01-21_o_22.14.01.png" alt="Zrzut ekranu 2026-01-21 o 22.14.01.png" />
+
+        <hr class="case-divider" />
+
+        <h2>5️⃣ Planowanie flow aplikacji (bardzo ważny moment)</h2>
+        <p>W bolcie wszystko było „na prompta”.</p>
+        <p>Tutaj musiałem <strong>poukładać projekt samodzielnie</strong>.</p>
+        <p>W FigJamie przygotowałem:</p>
+        <ul>
+          <li>prosty chart aplikacji</li>
+          <li>flow użytkownika</li>
+          <li>kolejność implementacji feature’ów</li>
+          <li>założenia pod MVP</li>
+        </ul>
+        <p>To był pierwszy moment, gdzie:</p>
+        <ul>
+          <li>przestałem myśleć tylko „jak zakodować ekran”</li>
+          <li>a zacząłem myśleć <strong>jak działa cała aplikacja</strong></li>
+        </ul>
+        <img src="images/Zrzut_ekranu_2026-01-21_o_22.17.29.png" alt="Zrzut ekranu 2026-01-21 o 22.17.29.png" />
+
+        <hr class="case-divider" />
+
+        <h2>6️⃣ Dokumentacja po feature’ach</h2>
+        <p>
+          Założyłem sobie jedną rzecz, której <strong>wcześniej nigdy nie robiłem</strong>:
+        </p>
+        <p>👉 <strong>po każdym większym feature’ze – dokumentacja</strong></p>
+        <p>Dlaczego?</p>
+        <ul>
+          <li>żeby nie pogubić się przy rozroście projektu</li>
+          <li>żeby móc wrócić do decyzji</li>
+          <li>żeby nauczyć się pracy „bardziej profesjonalnej”</li>
+        </ul>
+        <p>To bardzo szybko się zwróciło.</p>
+
+        <hr class="case-divider" />
+
+        <h2>7️⃣ Start developmentu – Codex + React Native CLI</h2>
+        <p>Nie pisałem wszystkiego „z palca”.</p>
+        <p>Świadomie:</p>
+        <ul>
+          <li>używałem Codexa</li>
+          <li>skracałem czas pisania boilerplate’u</li>
+          <li>skupiałem się na decyzjach i logice</li>
+        </ul>
+        <blockquote>
+          <p>Tak jak księgowy nie liczy na liczydle, tylko używa Excela.</p>
+        </blockquote>
+        <p>
+          Jeśli wiem, co robię i robiłem to wcześniej – <strong>nie ograniczam się sztucznie</strong>.
+        </p>
+
+        <hr class="case-divider" />
+
+        <h2>8️⃣ Pierwszy commit – 10 grudnia 2025</h2>
+        <ul>
+          <li>utworzenie projektu <strong>React Native CLI</strong></li>
+          <li>konfiguracja środowiska</li>
+          <li>sprawdzenie builda na fizycznym iPhonie przez Xcode</li>
+        </ul>
+        <p>Od tego momentu projekt <strong>realnie istnieje</strong>.</p>
+        <blockquote>
+          <p>Stan na dziś (21 stycznia 2026):</p>
+          <p>ok. <strong>miesiąc pracy</strong>, ~<strong>2 dni w tygodniu</strong></p>
+        </blockquote>
+
+        <hr class="case-divider" />
+
+        <h2>9️⃣ Architektura: Auth Gate vs App Gate</h2>
+        <p>Od początku założyłem podział aplikacji na:</p>
+        <ul>
+          <li><strong>Auth Gate</strong> – logowanie / rejestracja</li>
+          <li><strong>App Gate</strong> – właściwa aplikacja</li>
+        </ul>
+        <h3>Co zrobiłem:</h3>
+        <ul>
+          <li>UI logowania i rejestracji (Codex)</li>
+          <li>podłączenie <strong>Supabase Auth</strong></li>
+          <li>na start tylko logowanie (rejestrację zostawiłem na później)</li>
+        </ul>
+        <p>📌 Commit: <strong>27 grudnia</strong></p>
+        <p>(od 10 do 27 grudnia – przerwa, inne obowiązki)</p>
+
+        <hr class="case-divider" />
+
+        <h2>🔟 Home screen i Workout Session (MVP)</h2>
+        <p>Po zalogowaniu:</p>
+        <ul>
+          <li>stworzyłem <strong>Home Screen</strong></li>
+          <li>potem kluczowy ekran: <strong>Workout Session</strong></li>
+        </ul>
+        <h3>MVP workoutu:</h3>
+        <ul>
+          <li>dodawanie ćwiczeń przez input</li>
+          <li>liczba serii</li>
+          <li>liczba powtórzeń</li>
+          <li>czas przerwy</li>
+          <li>wszystko „na sucho” – bez bazy</li>
+        </ul>
+        <p>Celem było:</p>
+        <p>👉 <strong>sprawdzenie, czy UI i flow mają sens</strong></p>
+        <p>📌 Commit: <strong>28 grudnia</strong></p>
+        <div class="image-row">
+          <img src="images/IMG_2031.png" alt="IMG_2031.PNG" />
+          <img src="images/IMG_2032.png" alt="IMG_2032.PNG" />
+          <img src="images/IMG_2033.png" alt="IMG_2033.PNG" />
         </div>
-      </section>
+
+        <hr class="case-divider" />
+
+        <h2>1️⃣1️⃣ Poprawki UX + ekran podsumowania</h2>
+        <p>📌 Commit: <strong>4 stycznia</strong></p>
+        <ul>
+          <li>poprawa licznika przerwy</li>
+          <li>fix scrollowania</li>
+          <li>ekran podsumowania treningu:</li>
+        </ul>
+        <ul>
+          <li>ile kg przeniesiono</li>
+          <li>podstawowe statystyki</li>
+        </ul>
+        <p>To był moment „domykania” MVP UI.</p>
+
+        <hr class="case-divider" />
+
+        <h2>1️⃣2️⃣ Powrót do rejestracji i bazy danych</h2>
+        <p>Po UI wróciłem do:</p>
+        <ul>
+          <li>pełnej rejestracji</li>
+          <li>faktycznego spięcia aplikacji z bazą</li>
+        </ul>
+        <p>Musiałem:</p>
+        <ul>
+          <li>zrozumieć <strong>PostgreSQL (Supabase)</strong></li>
+          <li>zaplanować strukturę danych</li>
+          <li>przejść z myślenia SQL / NoSQL na Postgresa</li>
+        </ul>
+        <p>Chat pomógł mi:</p>
+        <ul>
+          <li>zrozumieć różnice</li>
+          <li>dobrać strukturę tabel</li>
+          <li>zaplanować relacje</li>
+        </ul>
+        <p>📌 Commit: <strong>5 stycznia</strong></p>
+        <ul>
+          <li>rejestracja</li>
+          <li>flow mailowe (confirm → browser → powrót do aplikacji)</li>
+          <li>zmiana języka aplikacji z EN na PL</li>
+        </ul>
+        <img src="images/Zrzut_ekranu_2026-01-21_o_22.24.38.png" alt="Zrzut ekranu 2026-01-21 o 22.24.38.png" />
+
+        <hr class="case-divider" />
+
+        <h2>1️⃣3️⃣ Profil użytkownika i historia treningów</h2>
+        <p>📌 Commit: <strong>6 stycznia</strong></p>
+        <ul>
+          <li>ekran profilu</li>
+          <li>pobieranie historii treningów z bazy</li>
+          <li>tygodniowe podsumowanie:</li>
+        </ul>
+        <ul>
+          <li>słupki</li>
+          <li>najcięższy dzień tygodnia</li>
+        </ul>
+        <p>pełna historia:</p>
+        <ul>
+          <li>lazy loading</li>
+          <li>10 rekordów na scroll</li>
+        </ul>
+        <p>To był pierwszy moment realnej pracy z danymi historycznymi.</p>
+        <div class="image-row">
+          <img src="images/IMG_2033.png" alt="IMG_2033.PNG" />
+          <img src="images/IMG_2034.png" alt="IMG_2034.PNG" />
+          <img src="images/IMG_2035.png" alt="IMG_2035.PNG" />
+        </div>
+
+        <hr class="case-divider" />
+
+        <h2>1️⃣4️⃣ Własne API ćwiczeń (kluczowa decyzja)</h2>
+        <p>Do tej pory:</p>
+        <ul>
+          <li>nazwy ćwiczeń wpisywane ręcznie</li>
+        </ul>
+        <p>Szukałem API:</p>
+        <ul>
+          <li>większość po angielsku</li>
+          <li>częściowo spolszczone</li>
+          <li>płatne</li>
+          <li>mało elastyczne</li>
+        </ul>
+        <h3>Decyzja:</h3>
+        <p>👉 <strong>robię własne API</strong></p>
+        <p>Na Vercelu:</p>
+        <ul>
+          <li><code>index.json</code> – lista ćwiczeń (lekka, pod wyszukiwarkę)</li>
+          <li>osobne JSON-y per ćwiczenie:</li>
+        </ul>
+        <ul>
+          <li>gif</li>
+          <li>tipy</li>
+          <li>partie mięśni</li>
+          <li>opisy</li>
+        </ul>
+        <p>Dzięki temu:</p>
+        <ul>
+          <li>mam pełną kontrolę</li>
+          <li>mogę rozwijać to pod aplikację</li>
+          <li>API jest dokładnie „pod mój use case”</li>
+        </ul>
+        <img
+          src="images/Zrzut_ekranu_2026-01-21_o_22.31.19_1.png"
+          alt="Zrzut ekranu 2026-01-21 o 22.31.19 1.png"
+        />
+
+        <hr class="case-divider" />
+
+        <h2>1️⃣5️⃣ Integracja API + zmiana zapisu w bazie</h2>
+        <p>Po dodaniu wyszukiwarki:</p>
+        <ul>
+          <li>musiałem zmienić zapis treningów</li>
+          <li>zapisywać <strong>ID ćwiczeń</strong>, nie tylko nazwy</li>
+        </ul>
+        <p>To był moment, gdzie frontend i backend musiały się „dogadać”.</p>
+
+        <hr class="case-divider" />
+
+        <h2>1️⃣6️⃣ Plany treningowe (UI)</h2>
+        <ul>
+          <li>ekran dodawania planu treningowego</li>
+          <li>na razie tylko UI</li>
+          <li>bez zapisu do bazy</li>
+        </ul>
+        <p>Cel: przygotowanie pod przyszły feature.</p>
+
+        <hr class="case-divider" />
+
+        <h2>1️⃣7️⃣ Zapisywanie treningu + szczegóły historii</h2>
+        <p>📌 Commit: <strong>13 stycznia</strong></p>
+        <ul>
+          <li>zapis wykonanego treningu do bazy</li>
+          <li>ekran szczegółów treningu z historii</li>
+          <li>możliwość usunięcia treningu</li>
+        </ul>
+        <p>Na tym etapie:</p>
+        <p>👉 <strong>aplikacja zamyka pełny cykl treningu</strong></p>
+
+        <hr class="case-divider" />
+
+        <h2>🔚 Podsumowanie etapu</h2>
+        <p>Na dziś:</p>
+        <ul>
+          <li>aplikacja nie jest jeszcze w App Store</li>
+          <li>ale jest <strong>działającym MVP</strong></li>
+          <li>z realnym backendem</li>
+          <li>z historią</li>
+          <li>z własnym API</li>
+          <li>z sensowną architekturą</li>
+        </ul>
+        <p>Dalszą część case study dopiszę <strong>po wydaniu aplikacji</strong>.</p>
+      </article>
     </main>
 
     <script src="js/main.js"></script>
