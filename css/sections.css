@@ -2,6 +2,7 @@
   background: var(--accent);
   color: #fff;
   padding: 80px 20px;
+  scroll-margin-top: 90px;
 }
 
 .section-inner {
@@ -65,6 +66,7 @@
 
 .search {
   padding: 70px 20px 30px;
+  scroll-margin-top: 90px;
 }
 
 .anchor {
