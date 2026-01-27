@@ -1,11 +1,19 @@
 .case-study {
-  padding: 80px 20px 120px;
+  padding: 32px 0 120px;
   background: radial-gradient(circle at top, #ffffff 0%, #f7f6f4 55%);
+}
+
+.case-hero {
+  width: 100%;
+  height: min(60vh, 520px);
+  object-fit: cover;
+  display: block;
 }
 
 .case-article {
   max-width: 860px;
   margin: 0 auto;
+  padding: 0 20px;
   color: #201f1e;
   line-height: 1.85;
 }
@@ -89,7 +97,11 @@
 
 @media (max-width: 720px) {
   .case-study {
-    padding: 60px 18px 90px;
+    padding: 24px 0 90px;
+  }
+
+  .case-hero {
+    height: 42vh;
   }
 
   .case-article p,

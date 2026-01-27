@@ -29,6 +29,13 @@
   margin-top: 16px;
 }
 
+@media (max-width: 720px) {
+  .hero-projects {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
 .project-card {
   display: grid;
   gap: 14px;
@@ -37,6 +44,24 @@
   background: #f0efed;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
   width: 100%;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.project-card:hover {
+  filter: brightness(0.97);
+  transform: translateY(-2px);
+}
+
+.project-card-link {
+  display: grid;
+  gap: 14px;
+  color: inherit;
+}
+
+.project-card-link:focus-visible {
+  outline: 2px solid rgba(182, 37, 38, 0.6);
+  outline-offset: 6px;
+  border-radius: 18px;
 }
 
 .project-thumb {
@@ -49,6 +74,18 @@
 .thumb-green,
 .thumb-purple {
   background: linear-gradient(160deg, #cb2b2c, #9d1f20);
+}
+
+.thumb-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.thumb-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .project-card h3 {
@@ -115,15 +152,8 @@
 }
 
 .project-links .link-case {
-  background: #0f0f0f;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-weight: 700;
-}
-
-.project-links .link-case .icon {
-  color: #fff;
+  color: #1e1d1b;
+  font-weight: 600;
 }
 
 .eyebrow {

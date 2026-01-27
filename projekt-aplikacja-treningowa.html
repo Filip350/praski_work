@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projekt — Aplikacja treningowa</title>
+    <meta
+      name="description"
+      content="Projekt aplikacji treningowej: opis, funkcje, technologie i case study."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/project.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-pill" aria-label="Główna nawigacja" data-nav>
+        <a class="brand" href="index.html">
+          <span class="brand-serif">Praski</span
+          ><span class="brand-sans">.work</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="sr-only">Otwórz menu</span>
+          <span class="nav-toggle-icon" aria-hidden="true">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </span>
+        </button>
+        <div class="nav-links" id="nav-menu">
+          <a href="projekty.html">Projekty</a>
+          <a href="index.html#certyfikaty">Certyfikaty</a>
+          <a href="index.html#czego-szukam">Czego szukam</a>
+          <a href="index.html#kontakt">Kontakt</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="project-page">
+      <section class="project-hero">
+        <h1>Aplikacja treningowa</h1>
+        <p>
+          Aplikacja umożliwia zapisywanie i śledzenie postępów treningowych w
+          czasie. Skupia się na prostym flow, szybkim logowaniu treningu i
+          czytelnej historii.
+        </p>
+        <div class="project-hero-actions">
+          <a class="primary-btn appstore-btn" href="projekty.html">
+            <img class="appstore-icon" src="images/appstore.png" alt="" />
+            AppStore
+          </a>
+          <a class="primary-btn case-btn" href="case-treningowa.html">
+            <i class="fa-solid fa-book"></i>
+            Case study
+          </a>
+        </div>
+      </section>
+
+      <div class="project-hero-media">
+        <img src="images/case-apka.png" alt="Aplikacja treningowa" />
+      </div>
+
+      <section class="project-section">
+        <h2>Najważniejsze informacje</h2>
+        <p>
+          Pomysł na aplikację nie powstał przy biurku, tylko… <strong>na siłowni</strong>.
+          Zaczęło się od potrzeby prostszego zapisu treningów i kontroli postępów.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Technologie</h2>
+        <div class="project-tags">
+          <span>React Native</span>
+          <span>Supabase</span>
+          <span>API</span>
+          <span>TypeScript</span>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Kluczowe funkcje</h2>
+        <ul class="project-features">
+          <li>Dodawanie ćwiczeń i zapisywanie wyników treningu.</li>
+          <li>Historia treningów z podsumowaniem tygodnia.</li>
+          <li>Autoryzacja użytkowników i zapis danych w chmurze.</li>
+          <li>Własne API ćwiczeń z podziałem na partie mięśni.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Galeria</h2>
+        <div class="project-gallery">
+          <img src="images/IMG_2031.png" alt="Ekran aplikacji" />
+          <img src="images/IMG_2032.png" alt="Ekran aplikacji" />
+          <img src="images/IMG_2033.png" alt="Ekran aplikacji" />
+        </div>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
